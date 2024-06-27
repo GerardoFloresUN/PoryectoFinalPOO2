@@ -1,0 +1,36 @@
+@using Dermatologia.Entities
+@model DoctorModel
+
+@{
+    ViewData["Title"] = "Agregar Doctor";
+}
+
+<form asp-action="DoctorAdd" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input asp-for="Nombre" type="text" class="form-control" placeholder="Escriba el nombre del doctor" />
+    </div>
+
+    <div class="mb-3">
+        <label for="especialidad" class="form-label">Especialidad</label>
+        <input asp-for="Especialidad" type="text" class="form-control" placeholder="Escriba la especialidad del doctor" />
+    </div>
+
+    <div class="mb-3">
+    
+        <label for="experiencia" class="form-label">Experiencia</label>
+        <input asp-for="Experiencia" type="text" class="form-control" placeholder="Escriba los años de experiencia del doctor" />
+    </div>
+
+    <div class="mb-3">
+        <label for="educacion" class="form-label">Educacion</label>
+        <input asp-for="Educacion" type="text" class="form-control" placeholder="Escriba la educación del doctor" />
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-success mb-3">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-controller="Doctor" asp-action="DoctorList">Regresar</a>
+</form>

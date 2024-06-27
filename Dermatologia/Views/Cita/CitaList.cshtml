@@ -1,0 +1,40 @@
+@model List<CitaModel>
+
+@{
+    ViewData["Title"] = "Lista de Citas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="CitaAdd" asp-controller="Cita" class="btn btn-success mb-3">
+    Agregar Cita
+</a>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>Acciones</th>
+            <th>Nombre de Cita</th>
+            <th>Teléfono</th>
+            <th>Doctor de Cita</th>
+            <th>Fecha de Cita</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var cita in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-secondary" asp-action="CitaEdit" asp-controller="Cita" asp-route-id="@cita.Id">Editar</a>
+                    <a class="btn btn-danger" asp-action="CitaDeleted" asp-controller="Cita" asp-route-id="@cita.Id">Borrar</a>
+                </td>
+                <td>@cita.NombreDeCita</td>
+                <td>@cita.Telefono</td>
+                <td>@cita.DoctorDeCita</td>
+                <td>@cita.FechaDeCita</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+@model CitaModel
+
+@{
+    ViewData["Title"] = "Editar Cita";
+}
+
+<form asp-action="CitaEdit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label for="nombredecita" class="form-label">Nombre de Cita</label>
+        <input asp-for="NombreDeCita" type="text" class="form-control" placeholder="Escriba el nombre de la cita" />
+    </div>
+
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input asp-for="Telefono" type="text" class="form-control" placeholder="Escriba el teléfono" />
+    </div>
+
+    <div class="mb-3">
+        <label for="doctordecita" class="form-label">Doctor de Cita</label>
+        <input asp-for="DoctorDeCita" type="text" class="form-control" placeholder="Escriba el nombre del doctor de la cita" />
+    </div>
+
+    <div class="mb-3">
+        <label for="fechadecita" class="form-label">Fecha de Cita</label>
+        <input asp-for="FechaDeCita" type="datetime-local" class="form-control" placeholder="Seleccione la fecha de la cita" />
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-success mb-3">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-controller="Cita" asp-action="CitaList">Regresar</a>
+</form>
