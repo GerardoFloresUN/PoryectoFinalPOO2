@@ -1,8 +1,240 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio Biomagnetismo";
 }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .hero-section {
+            background-color: #0056b3; /* Azul Vivo */
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-section .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .hero-section .btn-primary {
+            background-color: #004080; /* Azul Vivo más oscuro */
+            border-color: #004080;
+        }
+
+        .hero-section .btn-outline-light {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .features {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .features h2 {
+            margin-bottom: 40px;
+            color: #0056b3; /* Azul Vivo */
+        }
+
+        .features .feature {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .features .feature div {
+            flex: 1;
+            max-width: 300px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .features .feature i {
+            color: #0056b3; /* Azul Vivo */
+        }
+
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 40px;
+            color: #0056b3; /* Azul Vivo */
+        }
+
+        .testimonials blockquote {
+            margin: 20px auto;
+            padding: 20px;
+            border-left: 5px solid #0056b3; /* Azul Vivo */
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .more-info {
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .more-info h2 {
+            margin-bottom: 40px;
+            color: #0056b3; /* Azul Vivo */
+        }
+
+        .more-info .info-item {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            background-color: #0056b3; /* Azul Vivo */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section" data-aos="fade-in" data-aos-duration="1000">
+        <h1 data-aos="fade-up" data-aos-delay="200">Terapias de Biomagnetismo</h1>
+        <p data-aos="fade-up" data-aos-delay="400">Descubre el poder del biomagnetismo para mejorar tu bienestar físico y emocional. Ofrecemos terapias innovadoras con imanes, zapper y mucho más.</p>
+        <img src="~/img/perfil.jpg"  width="400" height="350">
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Servicios Principales</h2>
+            <div class="feature">
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-magnet fa-3x"></i>
+                    <h3>Terapia con Imanes</h3>
+                    <p>Utilizamos imanes de alta calidad para equilibrar la energía del cuerpo y promover la salud.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-bolt fa-3x"></i>
+                    <h3>Aplicación de Zapper</h3>
+                    <p>Tratamientos con zapper para eliminar patógenos y mejorar la vitalidad del organismo.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-heartbeat fa-3x"></i>
+                    <h3>Liberación de Emociones</h3>
+                    <p>Técnicas de biomagnetismo para liberar bloqueos emocionales y restaurar el equilibrio mental.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="800">
+                    <i class="fas fa-spa fa-3x"></i>
+                    <h3>Masaje de Columna</h3>
+                    <p>Masajes terapéuticos específicos para aliviar dolores y mejorar la postura.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="1000">
+                    <i class="fas fa-vials fa-3x"></i>
+                    <h3>Nivelación de Energía</h3>
+                    <p>Tratamientos para equilibrar la energía de los chakras y fomentar la armonía corporal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <blockquote data-aos="fade-up" data-aos-delay="200">
+                <p>"La terapia con imanes ha cambiado mi vida. Siento una paz y bienestar que nunca había experimentado."</p>
+                <footer>Laura Gómez, <cite title="Source Title">Paciente</cite></footer>
+            </blockquote>
+            <blockquote data-aos="fade-up" data-aos-delay="400">
+                <p>"El zapper es increíble, me siento más vital y con más energía que nunca."</p>
+                <footer>Juan Rodríguez, <cite title="Source Title">Cliente</cite></footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="more-info" id="more-info">
+        <div class="container">
+            <h2>Más Información</h2>
+            <div class="row">
+                <div class="col-md-6 info-item" data-aos="fade-right" data-aos-delay="200">
+                    <h4>Terapia con Imanes</h4>
+                    <p>Utilizamos imanes para restaurar el equilibrio energético de tu cuerpo, ayudando a aliviar dolencias y promover la sanación natural.</p>
+                </div>
+                <div class="col-md-6 info-item" data-aos="fade-left" data-aos-delay="400">
+                    <h4>Aplicación de Zapper</h4>
+                    <p>El zapper es una herramienta innovadora para eliminar microorganismos patógenos del cuerpo, mejorando tu salud y bienestar general.</p>
+                </div>
+                <div class="col-md-6 info-item" data-aos="fade-right" data-aos-delay="600">
+                    <h4>Liberación de Emociones</h4>
+                    <p>Aplicamos técnicas de biomagnetismo para liberar bloqueos emocionales, ayudándote a restaurar tu equilibrio emocional y mental.</p>
+                </div>
+                <div class="col-md-6 info-item" data-aos="fade-left" data-aos-delay="800">
+                    <h4>Masaje de Columna</h4>
+                    <p>Masajes especializados para aliviar tensiones y mejorar la alineación de tu columna vertebral, promoviendo una mejor postura y bienestar.</p>
+                </div>
+                <div class="col-md-6 info-item" data-aos="fade-right" data-aos-delay="1000">
+                    <h4>Nivelación de Energía</h4>
+                    <p>Aplicamos técnicas para equilibrar los chakras y mejorar tu energía vital, promoviendo una vida más armoniosa y saludable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Biomagnetismo Terapias. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

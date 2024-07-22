@@ -7,5 +7,8 @@ namespace Dermatologia.Entities
         public string Telefono { get; set; }
         public string DoctorDeCita { get; set; }
         public DateTime FechaDeCita { get; set; }
+
+        public Guid? DoctorId { get; set; }
+        public Doctor? Doctor{ get; set; }
     }
 }

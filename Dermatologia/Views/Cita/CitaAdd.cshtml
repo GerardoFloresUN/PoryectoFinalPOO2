@@ -19,8 +19,10 @@
     </div>
 
     <div class="mb-3">
-        <label for="doctordecita" class="form-label">Doctor de Cita</label>
-        <input asp-for="DoctorDeCita" type="text" class="form-control" placeholder="Escriba el nombre del doctor de la cita" />
+        
+        <select class="form-select mb-3" asp-for="DoctorId" asp-items="@Model.ListaDoctores">
+            <option>Seleccionar Doctor</option>
+        </select>
     </div>
 
     <div class="mb-3">

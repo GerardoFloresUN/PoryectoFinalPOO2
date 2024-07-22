@@ -1,6 +1,6 @@
-@model RegistroViewModel
+@model LoginViewModel
 @{
-    ViewData["Title"] = "Registro";
+    ViewData["Title"] = "Login";
 }
 
 <!DOCTYPE html>
@@ -27,27 +27,27 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
-        .btn-info, .btn-outline-info {
-            background-color: #17A2B8;
-            border-color: #17A2B8;
+        .btn-primary, .btn-outline-primary {
+            background-color: #1E90FF;
+            border-color: #1E90FF;
             color: #fff;
         }
-        .btn-outline-primary {
-            border-color: #1E90FF;
-            color: #1E90FF;
+        .btn-outline-success {
+            border-color: #32CD32;
+            color: #32CD32;
         }
-        .btn-outline-primary:hover {
-            background-color: #1E90FF;
+        .btn-outline-success:hover {
+            background-color: #32CD32;
             color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center">@ViewData["Title"]</h1>
+        <h1 class="text-center">Acceso al sistema</h1>
         <div class="card" data-aos="fade-up" data-aos-duration="1000">
             <div class="card-body">
-                <form asp-action="Registro" asp-controller="Usuario">
+                <form asp-action="Login" asp-controller="Usuario">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="mb-3">
                         <label asp-for="Email" class="form-label"></label>
@@ -59,8 +59,12 @@
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-                    <button class="btn btn-info btn-block">Registrarse</button>
-                    <a class="btn btn-outline-primary btn-block mt-2" asp-action="Login" asp-controller="Usuario">Entrar al Sistema</a>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" asp-for="Recuerdame">
+                        <label class="form-check-label" asp-for="Recuerdame"></Label>
+                    </div>
+                    <button class="btn btn-primary btn-block">Login</button>
+                    <a class="btn btn-outline-success btn-block mt-2" asp-action="Registro" asp-controller="Usuario">Crear una nueva cuenta</a>
                 </form>
             </div>
         </div>

@@ -7,5 +7,7 @@ namespace Dermatologia.Entities
         public string Especialidad { get; set; }
         public int Experiencia { get; set; }
         public string Educacion { get; set; }
+
+        public List<Cita> Citas { get; set; }
     }
 }

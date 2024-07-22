@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Dermatologia.Entities;
 using Dermatologia.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Dermatologia.Controllers
 {
@@ -81,7 +82,13 @@ namespace Dermatologia.Controllers
 
         public IActionResult CitaAdd()
         {
-            return View();
+            CitaModel cita = new CitaModel();
+
+            cita.ListaDoctores = 
+                    _context.Doctores.Select(p => new SelectListItem()
+                    { Value = p.Id.ToString(), Text = p.Nombre }
+                    ).ToList();
+            return View(cita);
         }
 
         [HttpPost]
@@ -89,6 +96,10 @@ namespace Dermatologia.Controllers
         {
             if (!ModelState.IsValid)
             {
+                model.ListaDoctores = 
+                    _context.Doctores.Select(p => new SelectListItem()
+                    { Value = p.Id.ToString(), Text = p.Nombre }
+                    ).ToList();
                 return View(model);
             }
 
@@ -97,8 +108,9 @@ namespace Dermatologia.Controllers
                 citaEntity.Id = Guid.NewGuid();
                 citaEntity.NombreDeCita = model.NombreDeCita;
                 citaEntity.Telefono = model.Telefono;
-                citaEntity.DoctorDeCita = model.DoctorDeCita;
+                
                 citaEntity.FechaDeCita = model.FechaDeCita;
+                citaEntity.DoctorId = model.DoctorId;
                 
             
 
