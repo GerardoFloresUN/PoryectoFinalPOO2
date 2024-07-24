@@ -148,19 +148,6 @@ namespace Dermatologia.Controllers
                 routeValues: new { confirmed = "", remove = "Rol removido correctamente a " + email });
         }
 
-        // [HttpGet]
-        // [Authorize(Roles = Constantes.RolAdmin)]
-        // public async Task<IActionResult> Listado(string mensaje = null)
-        // {
-        //     var usuarios = await _context.Users.Select(u => new UsuarioViewModel
-        //     {
-        //         Email = u.Email
-        //     }).ToListAsync();
-
-        //     var model = new UsuariosListadoViewModel();
-        //     model.Usuarios = usuarios;
-        //     model.Mensaje = mensaje;
-        //     return View(model);
-        // }
+        
     }
 }

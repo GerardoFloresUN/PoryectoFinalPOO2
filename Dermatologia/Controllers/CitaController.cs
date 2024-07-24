@@ -24,7 +24,6 @@ namespace Dermatologia.Controllers
                 Id = c.Id,
                 NombreDeCita = c.NombreDeCita,
                 Telefono = c.Telefono,
-                DoctorDeCita = c.DoctorDeCita,
                 FechaDeCita = c.FechaDeCita,
                 
             }).ToList();
@@ -46,7 +45,6 @@ namespace Dermatologia.Controllers
                 Id = citaActualizar.Id,
                 NombreDeCita = citaActualizar.NombreDeCita,
                 Telefono = citaActualizar.Telefono,
-                DoctorDeCita = citaActualizar.DoctorDeCita,
                 FechaDeCita = citaActualizar.FechaDeCita,
                 
             };
@@ -67,7 +65,6 @@ namespace Dermatologia.Controllers
 
                 citaActualizar.NombreDeCita = model.NombreDeCita;
                 citaActualizar.Telefono = model.Telefono;
-                citaActualizar.DoctorDeCita = model.DoctorDeCita;
                 citaActualizar.FechaDeCita = model.FechaDeCita;
                 
 
@@ -134,7 +131,6 @@ namespace Dermatologia.Controllers
                 Id = citaBorrar.Id,
                 NombreDeCita = citaBorrar.NombreDeCita,
                 Telefono = citaBorrar.Telefono,
-                DoctorDeCita = citaBorrar.DoctorDeCita,
                 FechaDeCita = citaBorrar.FechaDeCita,
                 
             };
