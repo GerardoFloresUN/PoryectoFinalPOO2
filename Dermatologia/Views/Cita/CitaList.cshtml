@@ -4,37 +4,34 @@
     ViewData["Title"] = "Lista de Citas";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="p-4 shadow-sm bg-white rounded">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-action="CitaAdd" asp-controller="Cita" class="btn btn-primary mb-3">Agregar Cita</a>
 
-<a asp-action="CitaAdd" asp-controller="Cita" class="btn btn-success mb-3">
-    Agregar Cita
-</a>
-
-<table class="table table-striped table-dark">
-    <thead>
-        <tr>
-            <th>Acciones</th>
-            <th>Nombre de Cita</th>
-            <th>Teléfono</th>
-            <th>Doctor de Cita</th>
-            <th>Fecha de Cita</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var cita in Model)
-        {
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>
-                    <a class="btn btn-secondary" asp-action="CitaEdit" asp-controller="Cita" asp-route-id="@cita.Id">Editar</a>
-                    <a class="btn btn-danger" asp-action="CitaDeleted" asp-controller="Cita" asp-route-id="@cita.Id">Borrar</a>
-                </td>
-                <td>@cita.NombreDeCita</td>
-                <td>@cita.Telefono</td>
-                <td>@cita.DoctorDeCita</td>
-                <td>@cita.FechaDeCita</td>
-                
+                <th>Acciones</th>
+                <th>Nombre de Cita</th>
+                <th>Teléfono</th>
+                <th>Doctor</th>
+                <th>Fecha de Cita</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach(var cita in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-secondary mb-1" asp-action="CitaEdit" asp-controller="Cita" asp-route-id="@cita.Id">Editar</a>
+                        <a class="btn btn-danger mb-1" asp-action="CitaDeleted" asp-controller="Cita" asp-route-id="@cita.Id">Borrar</a>
+                    </td>
+                    <td>@cita.NombreDeCita</td>
+                    <td>@cita.Telefono</td>
+                    <td>@cita.DoctorNombre</td>
+                    <td>@cita.FechaDeCita</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,12 +7,33 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Dermatologia.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-custom {
+            background-color: #0056b3;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #b3d9ff;
+        }
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-custom border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Biomagnapp</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/perfil.jpg">Biomagnapp
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,27 +41,26 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Pagina Principal</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Página Principal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Contactanos</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Contáctanos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Doctor" asp-action="DoctorList">Doctores</a>
+                            <a class="nav-link" asp-area="" asp-controller="Doctor" asp-action="DoctorList">Doctores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cita" asp-action="CitaList">Citas</a>
+                            <a class="nav-link" asp-area="" asp-controller="Cita" asp-action="CitaList">Citas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="ProductoList">Productos</a>
+                            <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="ProductoList">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Listado">Listado de Usuarios</a>
+                            <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Listado">Listado de Usuarios</a>
                         </li>
-                        
                     </ul>
 
-                    <partial name = "_LinksLogin" />
+                    <partial name="_LinksLogin" />
                 </div>
             </div>
         </nav>
@@ -53,7 +73,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - Dermatologia - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Biomagnapp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -62,3 +82,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+

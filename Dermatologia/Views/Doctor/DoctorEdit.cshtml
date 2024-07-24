@@ -4,10 +4,10 @@
     ViewData["Title"] = "Editar Doctor";
 }
 
-<form asp-action="DoctorEdit" method="post">
+<form asp-action="DoctorEdit" method="post" class="p-4 shadow-sm bg-white rounded">
+    <h3 class="mb-4">@ViewData["Title"]</h3>
     <input type="hidden" asp-for="Id" />
-
-    <div asp-validation-summary="All" class="text-danger"></div>
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
@@ -25,12 +25,10 @@
     </div>
 
     <div class="mb-3">
-        <label for="educacion" class="form-label">Educacion</label>
+        <label for="educacion" class="form-label">Educación</label>
         <input asp-for="Educacion" type="text" class="form-control" placeholder="Escriba la educación del doctor" />
     </div>
 
-    
-
-    <button type="submit" class="btn btn-success mb-3">Guardar</button>
-    <a class="btn btn-outline-secondary" asp-controller="Doctor" asp-action="DoctorList">Regresar</a>
+    <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+    <a class="btn btn-outline-secondary mb-3" asp-controller="Doctor" asp-action="DoctorList">Regresar</a>
 </form>
