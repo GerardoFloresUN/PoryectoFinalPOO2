@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <title>@ViewData["Title"]</title>
     <style>
         body {
@@ -111,6 +113,12 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        .carousel .carousel-item img {
+            max-height: 500px;
+            object-fit: cover;
+            width: 100%;
+        }
+
         .more-info {
             background-color: #f4f4f4;
             padding: 60px 20px;
@@ -128,6 +136,17 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .more-info .info-item .more-text {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .more-info .info-item.active .more-text {
+            display: block;
         }
 
         .footer {
@@ -145,7 +164,7 @@
     <section class="hero-section" data-aos="fade-in" data-aos-duration="1000">
         <h1 data-aos="fade-up" data-aos-delay="200">Terapias de Biomagnetismo</h1>
         <p data-aos="fade-up" data-aos-delay="400">Descubre el poder del biomagnetismo para mejorar tu bienestar físico y emocional. Ofrecemos terapias innovadoras con imanes, zapper y mucho más.</p>
-        <img src="~/img/perfil.jpg"  width="400" height="350">
+        <img src="~/img/perfil.jpg" width="400" height="350">
     </section>
 
     <section class="features">
@@ -184,18 +203,52 @@
     <section class="testimonials">
         <div class="container">
             <h2>Reseñas</h2>
-            <blockquote data-aos="fade-up" data-aos-delay="200">
-                <p>"La terapia con imanes ha cambiado mi vida. Siento una paz y bienestar que nunca había experimentado."</p>
-                <footer>Laura Gómez, <cite title="Source Title">Paciente</cite></footer>
-            </blockquote>
-            <blockquote data-aos="fade-up" data-aos-delay="400">
-                <p>"El zapper es increíble, me siento más vital y con más energía que nunca."</p>
-                <footer>Juan Rodríguez, <cite title="Source Title">Cliente</cite></footer>
-            </blockquote>
+            <div class="testimonial-carousel">
+                <blockquote data-aos="fade-up" data-aos-delay="200">
+                    <p>"La terapia con imanes ha cambiado mi vida. Siento una paz y bienestar que nunca había experimentado."</p>
+                    <footer>Laura Gómez, <cite title="Source Title">Paciente</cite></footer>
+                </blockquote>
+                <blockquote data-aos="fade-up" data-aos-delay="400">
+                    <p>"El zapper es increíble, me siento más vital y con más energía que nunca."</p>
+                    <footer>Juan Rodríguez, <cite title="Source Title">Cliente</cite></footer>
+                </blockquote>
+                <blockquote data-aos="fade-up" data-aos-delay="600">
+                    <p>"La liberación de emociones me ha ayudado a superar bloqueos emocionales. ¡Muy recomendable!"</p>
+                    <footer>María Sánchez, <cite title="Source Title">Paciente</cite></footer>
+                </blockquote>
+            </div>
         </div>
     </section>
 
-    
+    <section class="more-info">
+        <div class="container">
+            <h2>Más Información</h2>
+            <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>¿Qué es el Biomagnetismo?</h3>
+                <p>El biomagnetismo es una terapia alternativa que utiliza imanes para restaurar el equilibrio del cuerpo y mejorar la salud.</p>
+                <button class="btn btn-primary btn-read-more">Leer Más</button>
+                <div class="more-text">
+                    <p>Esta terapia fue desarrollada por el Dr. Isaac Goiz Durán en 1988 y ha demostrado ser eficaz en el tratamiento de diversas afecciones de salud, incluyendo dolores crónicos, infecciones, y desequilibrios energéticos. El biomagnetismo se basa en el principio de que muchas enfermedades son causadas por desequilibrios en el pH del cuerpo, los cuales pueden ser corregidos mediante la aplicación de imanes en puntos específicos del cuerpo.</p>
+                </div>
+            </div>
+            <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                <h3>Beneficios del Zapper</h3>
+                <p>El zapper es un dispositivo que utiliza frecuencias eléctricas para eliminar patógenos y mejorar la vitalidad del cuerpo.</p>
+                <button class="btn btn-primary btn-read-more">Leer Más</button>
+                <div class="more-text">
+                    <p>El zapper fue popularizado por la Dra. Hulda Clark y se ha utilizado para tratar una variedad de condiciones, desde infecciones parasitarias hasta problemas de energía y fatiga crónica. Funciona enviando corrientes eléctricas de baja frecuencia a través del cuerpo, lo que se cree que desactiva y elimina patógenos como virus, bacterias y parásitos.</p>
+                </div>
+            </div>
+            <div class="info-item" data-aos="fade-up" data-aos-delay="600">
+                <h3>Testimonios de Pacientes</h3>
+                <p>Lee más testimonios de nuestros pacientes que han experimentado mejoras significativas en su salud y bienestar.</p>
+                <button class="btn btn-primary btn-read-more">Leer Más</button>
+                <div class="more-text">
+                    <p>Nuestros pacientes han reportado una amplia gama de beneficios tras recibir tratamientos de biomagnetismo y zapper, incluyendo la reducción del dolor, la mejora del estado de ánimo, y una mayor energía y vitalidad. Muchos han encontrado alivio de condiciones que no respondían a otros tipos de tratamientos, lo que ha transformado sus vidas y les ha dado una nueva esperanza para el futuro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -207,8 +260,25 @@
     <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         AOS.init();
+
+        $(document).ready(function(){
+            $('.testimonial-carousel').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: true
+            });
+
+            $('.btn-read-more').click(function() {
+                $(this).siblings('.more-text').toggle();
+            });
+        });
     </script>
 </body>
 </html>
